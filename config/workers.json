@@ -1,0 +1,16 @@
+{
+  "workers": [
+    {
+      "id": "worker-01",
+      "port": 3001,
+      "walletDir": "./runtime/worker-01/wallet",
+      "stateDir": "./runtime/worker-01/state",
+      "logsDir": "./runtime/worker-01/logs",
+      "channel": "worker-01",
+      "profile": {
+        "taskMode": "research",
+        "notes": "vi rieng cho worker-01"
+      }
+    }
+  ]
+}

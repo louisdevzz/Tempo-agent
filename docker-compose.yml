@@ -1,0 +1,16 @@
+services:
+  worker-01:
+    build: .
+    working_dir: /app
+    command: ["node", "scripts/scheduler.mjs"]
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - tempo-wallet-01:/root/.tempo
+    environment:
+      - WORKER_ID=worker-01
+      - TEMPO_HOME=/root/.tempo
+      - TZ=Asia/Bangkok
+
+volumes:
+  tempo-wallet-01:

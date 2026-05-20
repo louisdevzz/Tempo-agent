@@ -1,0 +1,55 @@
+[
+  {
+    "id": "exa-search",
+    "name": "Exa AI Search",
+    "service": "Exa",
+    "method": "POST",
+    "url": "https://exa.mpp.tempo.xyz/search",
+    "payload": { "query": "bitcoin", "num_results": 1 },
+    "randomize": {
+      "query": [
+        "bitcoin price 2026", "ethereum news", "solana defi",
+        "crypto regulation", "layer2 scaling", "stablecoin yield",
+        "on-chain analytics", "polymarket trends", "web3 infra", "defi tvl"
+      ]
+    }
+  },
+  {
+    "id": "tempo-rpc",
+    "name": "Tempo RPC",
+    "service": "Tempo",
+    "method": "POST",
+    "url": "https://rpc.mpp.tempo.xyz",
+    "payload": { "jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": 1 },
+    "randomize": {
+      "method": [
+        "eth_blockNumber", "eth_gasPrice", "eth_chainId",
+        "net_version", "web3_clientVersion", "eth_syncing",
+        "net_peerCount", "net_listening", "eth_protocolVersion"
+      ]
+    }
+  },
+  {
+    "id": "quicknode-rpc",
+    "name": "Quicknode ETH RPC",
+    "service": "Quicknode",
+    "method": "POST",
+    "url": "https://mpp.quicknode.com/ethereum-mainnet",
+    "payload": { "jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": 1 },
+    "randomize": {
+      "method": [
+        "eth_blockNumber", "eth_gasPrice", "eth_chainId",
+        "net_version", "web3_clientVersion", "net_peerCount"
+      ]
+    }
+  },
+  {
+    "id": "object-storage",
+    "name": "Tempo Object Storage",
+    "service": "ObjectStorage",
+    "method": "GET",
+    "url": "https://storage.mpp.tempo.xyz/",
+    "payload": {},
+    "randomize": {}
+  }
+]
