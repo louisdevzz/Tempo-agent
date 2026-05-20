@@ -12,7 +12,7 @@ Hoạt động theo ca, mỗi 30–120 phút chọn random 1 task, gọi API, l�
 
 ```powershell
 # 1. Clone repo
-git clone https://github.com/YOUR_USERNAME/tempo-worker-bot.git
+git clone https://github.com/cudencuibap/tempo-worker-bot.git
 cd tempo-worker-bot
 
 # 2. Build
