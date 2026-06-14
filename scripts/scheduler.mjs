@@ -89,9 +89,11 @@ function randomizePayload(payload, randomize) {
 
 function checkBalance() {
   try {
-    const out = execSync('tempo wallet -t balance', { timeout: 30000, encoding: 'utf8' }).trim();
-    const m = out.match(/\$?([\d.]+)/);
-    return m ? parseFloat(m[1]) : null;
+    const out = execSync('tempo wallet -j whoami', { timeout: 30000, encoding: 'utf8' }).trim();
+    const data = JSON.parse(out);
+    const balance = data.balance?.available ?? data.balance?.total ?? data.key?.balance;
+    const n = balance !== undefined ? parseFloat(balance) : NaN;
+    return Number.isFinite(n) ? n : null;
   } catch { return null; }
 }
 

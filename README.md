@@ -23,7 +23,6 @@ docker compose run --rm -it worker-01 tempo wallet login
 
 # 4. Verify
 docker compose run --rm worker-01 tempo wallet -t whoami
-docker compose run --rm worker-01 tempo wallet -t balance
 
 # 5. Start
 docker compose up -d worker-01
@@ -106,7 +105,6 @@ docker compose run --rm -it worker-01 tempo wallet login
 
 # Verify
 docker compose run --rm worker-01 tempo wallet -t whoami
-docker compose run --rm worker-01 tempo wallet -t balance
 
 # Test manual 1 call (tuỳ chọn)
 docker compose run --rm worker-01 tempo request -t -X POST `
@@ -178,7 +176,7 @@ docker compose run --rm worker-01 node scripts/check-log.mjs all
 docker compose run --rm worker-01 node scripts/check-log.mjs worker-01
 
 # Check balance
-docker compose run --rm worker-01 tempo wallet -t balance
+docker compose run --rm worker-01 tempo wallet -t whoami
 
 # Log Docker
 docker compose logs -f worker-01
